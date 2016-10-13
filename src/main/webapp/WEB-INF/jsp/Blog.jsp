@@ -44,7 +44,7 @@
 					</sec:authorize> --%>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody>Hello
 				<tr data-ng-repeat="blog in blogs">
 					<td>{{blog.bid}}</td>
 					<td>{{blog.blogName}}</td>
