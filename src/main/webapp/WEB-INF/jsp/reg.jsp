@@ -24,16 +24,16 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-				<a class="navbar-brand" href="">Hello</a>
+			<a class="navbar-brand" href="" style= "font_family:Algerian">Collabzo</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="">Home</a></li>
-					<li><a href="">About</a></li>
+					<li class="active"><a href="#">Home</a></li>
+					
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-               <sec:authorize access="!isAuthenticated()">         <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a></sec:authorize>
+               <sec:authorize access="!isAuthenticated()"> <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a></sec:authorize>
                         <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
                         
 						<li>
@@ -69,13 +69,17 @@
             </li>
                         </ul>
                     </li>
+                     
+                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
+					<li><a href="${pageContext.request.contextPath}/forum">Forum</a></li>
+					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
                      <sec:authorize access="isAuthenticated()">
                     
                     
                     
-                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
+                  <%--   <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
 					<li><a href="${pageContext.request.contextPath}/forum">Forum</a></li>
-					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
+					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li> --%>
 					<li><a style="color: white">Hello  <b><sec:authentication property="principal.username" /></b></a></li>
 						<li><a href="perform_logout"><span
 								class="glyphicon glyphicon-log-out"></span></a></li>
@@ -85,6 +89,7 @@
                         <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
              
                             <div class="col-lg-12">
+                             <div class="row-lg-12">
                             
                                 <div class="text-center"><h3><b>Log In</b></h3></div>
                                 <form  action="perform_login" method="post"><!-- <span class="glyphicon glyphicon-log-out"></span> -->
@@ -142,7 +147,7 @@
 <!-- <div id="tabs" class="container" style="margin-top: 25px"> -->
 
 
-<div id="tabs" class="container" style="margin-top: 25px;background:lavender">
+<div  class="container" style="background:lavender">
 <c:choose>
 		<c:when test="${BlogClicked}">
 			<div class="container">
