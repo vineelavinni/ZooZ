@@ -81,7 +81,7 @@
 								class="glyphicon glyphicon-log-out"></span></a></li>
 					</sec:authorize> 
                     <li class="dropdown">
-       <sec:authorize access="!isAuthenticated()">                     <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a></sec:authorize>
+       <sec:authorize access="!isAuthenticated()"><a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a></sec:authorize>
                         <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
              
                             <div class="col-lg-12">
