@@ -32,7 +32,7 @@
 					<th>Blog ID</th>
 					<th>Blog Name</th>
 					<th>Blog Description</th>
-					<th>View Forum</th>
+					<th>View Blog</th>
 					<sec:authorize access="isAuthenticated()">   
 						<th>Delete/Edit</th>
 						
@@ -49,8 +49,9 @@
 					<td>{{blog.bid}}</td>
 					<td>{{blog.blogName}}</td>
 					<td>{{blog.blogDesc}}</td>
-					<sec:authorize access="isAuthenticated()">
+					
 					<td width="5%"><a href="blog/{{blog.bid}}" class="btn btn-primary btn-xs">View</a></td> 
+							<sec:authorize access="isAuthenticated()">
 							 <td data-ng-show="accessBlog(blog.b_userid)">
  									<a class="btn btn-primary btn-xs"
  										data-ng-click="deleteBlog(blog.bid)">Delete</a> 

@@ -47,7 +47,7 @@
 					<td>{{forum.fid}}</td>
 					<td>{{forum.forumName}}</td>
 					<td>{{forum.forumDesc}}</td>
-					<sec:authorize access="isAuthenticated()">
+					
 						<!-- <td><button data-ng-click="deleteForum(forum.fid)"
 								class="btn btn-xs btn-info">Delete</button></td>
 						<td><button data-ng-click="editForum(forum.fid)"
@@ -55,7 +55,9 @@
 								<td><a href="Forum/{{(forum.fid)}}"
 								class="btn btn-xs btn-info">View</a></td> -->
 									
+							
 									<td width="5%"><a href="Forum/{{forum.fid}}" class="btn btn-primary btn-xs">View</a></td>
+									<sec:authorize access="isAuthenticated()">
 							<td data-ng-show="accessForum(forum.f_userid)">
  									<a class="btn btn-primary btn-xs"
  										data-ng-click="deleteForum(forum.fid)">Delete</a> 

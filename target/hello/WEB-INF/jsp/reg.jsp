@@ -13,7 +13,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/AngularControllers/App.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/AngularControllers/Home.js"></script>
 
-<body >
+<body style="background-image: url('resources/images/image.jpg');background-size:cover  ;background-repeat: no-repeat;">
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     	<div class="container-fluid">
@@ -24,16 +24,16 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-				<a class="navbar-brand" href="">Hello</a>
+			<a class="navbar-brand" href="" style= "font_family:Algerian">Collabzo</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="">Home</a></li>
-					<li><a href="">About</a></li>
+					<li class="active"><a href="#">Home</a></li>
+					
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a>
+               <sec:authorize access="!isAuthenticated()"> <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a></sec:authorize>
                         <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
                         
 						<li>
@@ -69,22 +69,27 @@
             </li>
                         </ul>
                     </li>
+                     
+                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
+					<li><a href="${pageContext.request.contextPath}/forum">Forum</a></li>
+					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
                      <sec:authorize access="isAuthenticated()">
                     
                     
                     
-                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
+                  <%--   <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
 					<li><a href="${pageContext.request.contextPath}/forum">Forum</a></li>
-					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
+					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li> --%>
 					<li><a style="color: white">Hello  <b><sec:authentication property="principal.username" /></b></a></li>
 						<li><a href="perform_logout"><span
 								class="glyphicon glyphicon-log-out"></span></a></li>
 					</sec:authorize> 
                     <li class="dropdown">
-                        <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+       <sec:authorize access="!isAuthenticated()"><a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a></sec:authorize>
                         <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
              
                             <div class="col-lg-12">
+                             <div class="row-lg-12">
                             
                                 <div class="text-center"><h3><b>Log In</b></h3></div>
                                 <form  action="perform_login" method="post"><!-- <span class="glyphicon glyphicon-log-out"></span> -->
@@ -138,16 +143,11 @@
 						<li><a href="perform_logout"><span
 								class="glyphicon glyphicon-log-out"></span></a></li>
 					</sec:authorize>   --%>
- <div class="container">
-    <div class="row">
-        <div class="col-xs-12 text-center">Be sure to include <a href="http://daneden.github.io/animate.css/" target="_blank" title="animate.css">animate.css</a> for the animations</div>
-    </div>
-</div> 
+
 <!-- <div id="tabs" class="container" style="margin-top: 25px"> -->
 
 
-
-<%@include file="/WEB-INF/jsp/Body.jsp" %>
+<div  class="container" style="background:lavender">
 <c:choose>
 		<c:when test="${BlogClicked}">
 			<div class="container">
@@ -188,6 +188,7 @@
 			</sec:authorize>
 			</c:otherwise>
 	</c:choose>
+	</div>
 <%-- <div id="tabs" class="container" style="margin-top: 25px">
 		<ul>
 			 <li><a href="#fragment-1">Blog</a></li> 

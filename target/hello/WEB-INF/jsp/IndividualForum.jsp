@@ -3,7 +3,7 @@
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<div data-ng-controller="IndividualForum">
+<br><br><br><div data-ng-controller="IndividualForum">
 	<div style="margin-top: 20px;border: 5px;border-color: blue">
 		<c:if test="${!empty forumList}">
 			<c:forEach items="${forumList}" var="forum">
